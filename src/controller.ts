@@ -15,8 +15,7 @@ class AbortController {
 
   abort (): void {
 
-    this.signal.aborted = true;
-    this.signal.dispatchEvent ( 'abort' );
+    return this.signal.abort ();
 
   }
 

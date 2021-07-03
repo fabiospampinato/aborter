@@ -9,10 +9,10 @@ class AbortSignal {
 
   /* VARIABLES */
 
-  aborted: boolean = false;
-  listeners: Partial<Record<Event, Listener[]>> = {};
+  public aborted: boolean = false;
+  private listeners: Partial<Record<Event, Listener[]>> = {};
 
-  /* API */
+  /* EVENTS API */
 
   addEventListener ( event: Event, listener: Listener ): void {
 
@@ -41,6 +41,17 @@ class AbortSignal {
     listeners.slice ().forEach ( listener => listener () );
 
     return true;
+
+  }
+
+  /* API */
+
+  abort (): void {
+
+    if ( this.aborted ) return;
+
+    this.aborted = true;
+    this.dispatchEvent ( 'abort' );
 
   }
 
