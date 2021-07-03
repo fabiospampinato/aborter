@@ -1,7 +1,7 @@
 {
   "name": "aborter",
   "description": "A minimal reimplementation of AbortController and AbortSignal.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "dist/controller.js",
   "types": "dist/controller.d.ts",
   "scripts": {
