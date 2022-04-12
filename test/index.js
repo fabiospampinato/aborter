@@ -1,10 +1,10 @@
 
 /* IMPORT */
 
-import {describe} from 'ava-spec';
-import {default as Aborter} from '../dist/controller';
+import {describe} from 'fava';
+import Aborter from '../dist/index.js';
 
-/* ABORTER */
+/* MAIN */
 
 describe ( 'Aborter', it => {
 

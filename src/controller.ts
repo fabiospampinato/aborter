@@ -3,7 +3,7 @@
 
 import AbortSignal from './signal';
 
-/* ABORT CONTROLLER */
+/* MAIN */
 
 class AbortController {
 

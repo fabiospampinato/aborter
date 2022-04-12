@@ -1,9 +1,9 @@
 
 /* IMPORT */
 
-import {Event, Listener} from './types';
+import type {Event, Listener} from './types';
 
-/* ABORT SIGNAL */
+/* MAIN */
 
 class AbortSignal {
 

@@ -1,10 +1,10 @@
 
-/* TYPES */
+/* MAIN */
 
 type Event = 'abort';
 
-type Listener = () => any;
+type Listener = () => void;
 
 /* EXPORT */
 
-export {Event, Listener};
+export type {Event, Listener};
