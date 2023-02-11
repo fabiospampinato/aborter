@@ -2,7 +2,7 @@
 
 A minimal reimplementation of [AbortController](https://developer.mozilla.org/en-US/docs/Web/API/AbortController) and [AbortSignal](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal).
 
-This library is only 0.8kb minified, but it's not strictly spec-compliant, if you need that go with [`abort-controller`](https://www.npmjs.com/package/abort-controller).
+This library is only 0.5kb minified, but it's not strictly spec-compliant, if you need that go with [`abort-controller`](https://www.npmjs.com/package/abort-controller).
 
 ## Install
 
