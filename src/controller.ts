@@ -9,13 +9,16 @@ class AbortController {
 
   /* VARIABLES */
 
-  signal: AbortSignal = new AbortSignal ();
+  public signal: AbortSignal = new AbortSignal ();
 
   /* API */
 
   abort (): void {
 
-    return this.signal.abort ();
+    if ( this.signal.aborted ) return;
+
+    this.signal.aborted = true;
+    this.signal.dispatchEvent ( 'abort' );
 
   }
 

@@ -10,48 +10,33 @@ class AbortSignal {
   /* VARIABLES */
 
   public aborted: boolean = false;
-  private listeners: Partial<Record<Event, Listener[]>> = {};
+  private listeners: Set<Listener> = new Set ();
 
   /* EVENTS API */
 
   addEventListener ( event: Event, listener: Listener ): void {
 
-    const listeners = this.listeners[event] || ( this.listeners[event] = [] );
+    if ( event !== 'abort' ) return;
 
-    listeners.push ( listener );
+    this.listeners.add ( listener );
 
   }
 
   removeEventListener ( event: Event, listener: Listener ): void {
 
-    const listeners = this.listeners[event];
+    if ( event !== 'abort' ) return;
 
-    if ( !listeners ) return;
-
-    listeners.splice ( listeners.indexOf ( listener ), 1 );
+    this.listeners.delete ( listener );
 
   }
 
   dispatchEvent ( event: Event ): boolean {
 
-    const listeners = this.listeners[event];
+    if ( event !== 'abort' ) return false;
 
-    if ( !listeners ) return true;
-
-    listeners.slice ().forEach ( listener => listener () );
+    [...this.listeners].forEach ( listener => listener () );
 
     return true;
-
-  }
-
-  /* API */
-
-  abort (): void {
-
-    if ( this.aborted ) return;
-
-    this.aborted = true;
-    this.dispatchEvent ( 'abort' );
 
   }
 
