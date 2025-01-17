@@ -7,7 +7,7 @@ This library is only 0.5kb minified, but it's not strictly spec-compliant, if yo
 ## Install
 
 ```sh
-npm install --save aborter
+npm install aborter
 ```
 
 ## Usage
